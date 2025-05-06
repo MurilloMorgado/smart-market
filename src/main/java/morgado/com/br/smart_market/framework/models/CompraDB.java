@@ -9,12 +9,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "/compra")
+@Table(name = "compra")
 public class CompraDB {
   
   @Id
