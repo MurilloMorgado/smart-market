@@ -25,4 +25,12 @@ public class CompraFramework implements CompraOutput {
 
   }
 
+  @Override
+  public Compra buscarCompra(Long idCompra) {
+
+    return compraRepository.findById(idCompra).map(compraMapper::toDomain)
+        .orElseThrow(() -> new InternalError("Compra não encontrada"));
+
+  }
+
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +25,13 @@ public class CompraController {
     List<Compra> listaDeCompras = compraInput.listarCompras();
 
     return ResponseEntity.ok().body(listaDeCompras);
+  }
+
+  @GetMapping("/{idCompra}")
+  public ResponseEntity<Compra> buscarCompra(@PathVariable Long idCompra){
+    
+    Compra compra = compraInput.buscarCompra(idCompra);
+
+    return ResponseEntity.ok().body(compra);
   }
 }

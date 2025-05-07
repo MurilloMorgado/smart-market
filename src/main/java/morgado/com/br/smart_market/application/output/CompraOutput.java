@@ -7,4 +7,6 @@ import morgado.com.br.smart_market.domain.models.Compra;
 public interface CompraOutput {
   
   List<Compra> listarCompras();
+
+  Compra buscarCompra(Long idCompra);
 }

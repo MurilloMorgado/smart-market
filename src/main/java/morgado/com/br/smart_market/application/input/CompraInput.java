@@ -8,4 +8,6 @@ public interface CompraInput {
   
   List<Compra> listarCompras();
 
+  Compra buscarCompra(Long idCompra);
+
 }

@@ -22,4 +22,11 @@ public class CompraApplication implements CompraInput {
 
   }
 
+  @Override
+  public Compra buscarCompra(Long idCompra) {
+   
+    return compraOutput.buscarCompra(idCompra);
+
+  }
+
 }
