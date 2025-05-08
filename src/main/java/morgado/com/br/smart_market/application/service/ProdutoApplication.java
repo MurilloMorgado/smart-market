@@ -22,4 +22,28 @@ public class ProdutoApplication implements ProdutoInput {
 
   }
 
+  @Override
+  public Produto buscarProduto(Long idProduto) {
+
+    return produtoOutput.buscarProduto(idProduto);
+  }
+
+  @Override
+  public Produto criarProduto(Produto produto) {
+
+    return produtoOutput.criarProduto(produto);
+  }
+
+  @Override
+  public void atualizarProduto(Produto produto, Long idProduto) {
+
+    produtoOutput.atualizarProduto(produto, idProduto);
+  }
+
+  @Override
+  public void deletarProduto(Long idProduto) {
+    
+    produtoOutput.deletarProduto(idProduto);
+  }
+
 }

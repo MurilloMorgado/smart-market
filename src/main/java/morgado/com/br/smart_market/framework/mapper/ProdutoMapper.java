@@ -17,4 +17,13 @@ public class ProdutoMapper {
         produtoDB.getCategoria());
   }
 
+  public ProdutoDB toEntity(Produto produto) {
+
+    return new ProdutoDB(
+        produto.getId(),
+        produto.getNome(),
+        produto.getMarca(),
+        produto.getCategoria());
+  }
+
 }
