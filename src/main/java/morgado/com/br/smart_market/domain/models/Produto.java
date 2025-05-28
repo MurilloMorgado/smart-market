@@ -10,10 +10,7 @@ import lombok.NoArgsConstructor;
 public class Produto {
 
   private Long id;
-
   private String nome;
-  
   private String marca;
-  
   private String categoria;;
 }
