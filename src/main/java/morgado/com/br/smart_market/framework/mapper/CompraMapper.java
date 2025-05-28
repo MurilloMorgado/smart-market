@@ -10,10 +10,17 @@ public class CompraMapper {
 
   public Compra toDomain(CompraDB compraDB) {
     return new Compra(
-      compraDB.getId(),
-      compraDB.getIdProdutoSupermercado(),
-    compraDB.getData(),
-    compraDB.getValorProduto()
-    );
+        compraDB.getId(),
+        compraDB.getIdProdutoSupermercado(),
+        compraDB.getData(),
+        compraDB.getValorProduto());
+  }
+
+  public CompraDB toEntity(Compra compra) {
+    return new CompraDB(
+        compra.getId(),
+        compra.getIdProdutoSupermercado(),
+        compra.getData(),
+        compra.getValorProduto());
   }
 }

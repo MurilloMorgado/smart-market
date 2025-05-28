@@ -9,4 +9,6 @@ public interface CompraOutput {
   List<Compra> listarCompras();
 
   Compra buscarCompra(Long idCompra);
+
+  Compra criarCompra(Compra compra);
 }

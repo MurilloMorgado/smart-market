@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import morgado.com.br.smart_market.application.output.CompraOutput;
 import morgado.com.br.smart_market.domain.models.Compra;
 import morgado.com.br.smart_market.framework.mapper.CompraMapper;
+import morgado.com.br.smart_market.framework.models.CompraDB;
 import morgado.com.br.smart_market.framework.output.jpa.CompraRepository;
 
 @RequiredArgsConstructor
@@ -31,6 +32,14 @@ public class CompraFramework implements CompraOutput {
     return compraRepository.findById(idCompra).map(compraMapper::toDomain)
         .orElseThrow(() -> new InternalError("Compra não encontrada"));
 
+  }
+
+  @Override
+  public Compra criarCompra(Compra compra) {
+
+    CompraDB compraDB = compraMapper.toEntity(compra);
+
+    return compraMapper.toDomain(compraRepository.save(compraDB));
   }
 
 }

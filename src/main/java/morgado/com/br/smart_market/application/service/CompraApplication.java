@@ -17,16 +17,23 @@ public class CompraApplication implements CompraInput {
 
   @Override
   public List<Compra> listarCompras() {
-    
+
     return compraOutput.listarCompras();
 
   }
 
   @Override
   public Compra buscarCompra(Long idCompra) {
-   
+
     return compraOutput.buscarCompra(idCompra);
 
+  }
+
+  @Override
+  public Compra criarCompra(Compra compra) {
+
+    return compraOutput.criarCompra(compra);
+    
   }
 
 }

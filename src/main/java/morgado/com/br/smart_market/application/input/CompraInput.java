@@ -10,4 +10,6 @@ public interface CompraInput {
 
   Compra buscarCompra(Long idCompra);
 
+  Compra criarCompra(Compra compra);
+
 }
