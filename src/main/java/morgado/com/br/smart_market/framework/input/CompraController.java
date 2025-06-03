@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import morgado.com.br.smart_market.application.input.CompraInput;
 import morgado.com.br.smart_market.domain.models.Compra;
+import morgado.com.br.smart_market.domain.models.Request.CompraRequest;
 
 @RestController
 @RequiredArgsConstructor
@@ -38,7 +39,7 @@ public class CompraController {
   }
 
   @PostMapping
-  public ResponseEntity<Long> criarCompra(@RequestBody Compra compra){
+  public ResponseEntity<Long> criarCompra(@RequestBody CompraRequest compra){
 
     Long idCompra = compraInput.criarCompra(compra).getId();
 

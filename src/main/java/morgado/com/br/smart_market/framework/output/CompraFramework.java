@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import morgado.com.br.smart_market.application.output.CompraOutput;
 import morgado.com.br.smart_market.domain.models.Compra;
+import morgado.com.br.smart_market.domain.models.Request.CompraRequest;
 import morgado.com.br.smart_market.framework.mapper.CompraMapper;
 import morgado.com.br.smart_market.framework.models.CompraDB;
 import morgado.com.br.smart_market.framework.output.jpa.CompraRepository;
@@ -35,7 +36,7 @@ public class CompraFramework implements CompraOutput {
   }
 
   @Override
-  public Compra criarCompra(Compra compra) {
+  public Compra criarCompra(CompraRequest compra) {
 
     CompraDB compraDB = compraMapper.toEntity(compra);
 

@@ -3,6 +3,7 @@ package morgado.com.br.smart_market.framework.mapper;
 import org.springframework.stereotype.Component;
 
 import morgado.com.br.smart_market.domain.models.Compra;
+import morgado.com.br.smart_market.domain.models.Request.CompraRequest;
 import morgado.com.br.smart_market.framework.models.CompraDB;
 
 @Component
@@ -16,11 +17,11 @@ public class CompraMapper {
         compraDB.getValorProduto());
   }
 
-  public CompraDB toEntity(Compra compra) {
+  public CompraDB toEntity(CompraRequest compra) {
     return new CompraDB(
-        compra.getId(),
+        null,
         compra.getIdProdutoSupermercado(),
-        compra.getData(),
+        null,
         compra.getValorProduto());
   }
 }

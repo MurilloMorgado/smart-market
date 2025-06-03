@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import morgado.com.br.smart_market.application.input.CompraInput;
 import morgado.com.br.smart_market.application.output.CompraOutput;
 import morgado.com.br.smart_market.domain.models.Compra;
+import morgado.com.br.smart_market.domain.models.Request.CompraRequest;
 
 @Service
 @RequiredArgsConstructor
@@ -30,7 +31,7 @@ public class CompraApplication implements CompraInput {
   }
 
   @Override
-  public Compra criarCompra(Compra compra) {
+  public Compra criarCompra(CompraRequest compra) {
 
     return compraOutput.criarCompra(compra);
     

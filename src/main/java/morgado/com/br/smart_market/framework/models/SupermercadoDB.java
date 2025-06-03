@@ -7,8 +7,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -17,10 +19,10 @@ public class SupermercadoDB {
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ID_SUPERMERDACADO")
+  @Column(name = "ID_SUPERMERCADO")
   private Long id;
   
-  @Column(name = "NOME_SUPERMERDACADO")
+  @Column(name = "NOME_SUPERMERCADO")
   private String nome;
 
   
