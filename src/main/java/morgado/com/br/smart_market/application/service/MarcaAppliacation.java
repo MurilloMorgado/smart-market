@@ -1,19 +1,19 @@
-package morgado.com.br.smart_market.framework.output;
+package morgado.com.br.smart_market.application.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
+import morgado.com.br.smart_market.application.input.MarcaInput;
 import morgado.com.br.smart_market.application.output.MarcaOutput;
 import morgado.com.br.smart_market.domain.models.Marca;
-import morgado.com.br.smart_market.framework.output.jpa.MarcaRepository;
 
 @Service
 @RequiredArgsConstructor
-public class MarcaFramework implements MarcaOutput {
+public class MarcaAppliacation implements MarcaInput {
 
-  private MarcaRepository marcaRepository;
+  private MarcaOutput marcaOutput;
 
   @Override
   public List<Marca> listarMarcas() {
@@ -44,4 +44,5 @@ public class MarcaFramework implements MarcaOutput {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'deletarMarca'");
   }
+
 }

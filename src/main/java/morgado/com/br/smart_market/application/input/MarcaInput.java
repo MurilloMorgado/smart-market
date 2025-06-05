@@ -1,11 +1,11 @@
-package morgado.com.br.smart_market.application.output;
+package morgado.com.br.smart_market.application.input;
 
 import java.util.List;
 
 import morgado.com.br.smart_market.domain.models.Marca;
 
-public interface MarcaOutput {
-  
+public interface MarcaInput {
+
   List<Marca> listarMarcas();
 
   Marca buscarMarca(Long idMarca);

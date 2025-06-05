@@ -1,10 +1,10 @@
-package morgado.com.br.smart_market.application.output;
+package morgado.com.br.smart_market.application.input;
 
 import java.util.List;
 
 import morgado.com.br.smart_market.domain.models.ProdutoMarca;
 
-public interface ProdutoMarcaOutput {
+public interface ProdutoMarcaInput {
 
   List<ProdutoMarca> listarMarcas();
 
@@ -15,5 +15,4 @@ public interface ProdutoMarcaOutput {
   void atualizarMarca(ProdutoMarca produtoMarca, Long idProdutoMarca);
 
   void deletarMarca(Long idProdutoMarca);
-
 }

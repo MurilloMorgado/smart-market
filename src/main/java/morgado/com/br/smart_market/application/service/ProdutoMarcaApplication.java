@@ -1,47 +1,48 @@
-package morgado.com.br.smart_market.framework.output;
+package morgado.com.br.smart_market.application.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import morgado.com.br.smart_market.application.output.MarcaOutput;
-import morgado.com.br.smart_market.domain.models.Marca;
-import morgado.com.br.smart_market.framework.output.jpa.MarcaRepository;
+import morgado.com.br.smart_market.application.input.ProdutoMarcaInput;
+import morgado.com.br.smart_market.application.output.ProdutoMarcaOutput;
+import morgado.com.br.smart_market.domain.models.ProdutoMarca;
 
 @Service
 @RequiredArgsConstructor
-public class MarcaFramework implements MarcaOutput {
+public class ProdutoMarcaApplication implements ProdutoMarcaInput {
 
-  private MarcaRepository marcaRepository;
+  private ProdutoMarcaOutput produtoMarcaOutput;
 
   @Override
-  public List<Marca> listarMarcas() {
+  public List<ProdutoMarca> listarMarcas() {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'listarMarcas'");
   }
 
   @Override
-  public Marca buscarMarca(Long idMarca) {
+  public ProdutoMarca buscarMarca(Long idProdutoMarca) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'buscarMarca'");
   }
 
   @Override
-  public Long criarMarca(Marca marca) {
+  public Long criarMarca(ProdutoMarca produtoMarca) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'criarMarca'");
   }
 
   @Override
-  public void atualizarMarca(Marca marca, Long idMarca) {
+  public void atualizarMarca(ProdutoMarca produtoMarca, Long idProdutoMarca) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'atualizarMarca'");
   }
 
   @Override
-  public void deletarMarca(Long idMarca) {
+  public void deletarMarca(Long idProdutoMarca) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'deletarMarca'");
   }
+
 }
