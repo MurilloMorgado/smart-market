@@ -20,5 +20,29 @@ public class SupermercadoApplication implements SupermercadoInput {
     
     return supermercadoOutput.listarSupermercado();
   }
+
+  @Override
+  public Supermercado buscarSupermercado(Long idSupermercado) {
+    
+    return supermercadoOutput.buscarSupermercado(idSupermercado);
+  }
+
+  @Override
+  public Supermercado criarSupermercado(Supermercado supermercado) {
+    
+    return supermercadoOutput.criarSupermercado(supermercado);
+  }
+
+  @Override
+  public void atualizarSupermercado(Long idSupermercado, Supermercado supermercado) {
+    
+    supermercadoOutput.atualizarSupermercado(idSupermercado, supermercado);
+  }
+
+  @Override
+  public void deletarSupermercado(Long idSupermercado) {
+    
+    supermercadoOutput.deletarSupermercado(idSupermercado);
+  }
   
 }
