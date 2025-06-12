@@ -30,6 +30,6 @@ public class CompraDB {
   @Column(name = "DATA_COMPRA")
   private LocalDateTime data;
   
-  @Column(name = "VALOR_PRODUTO")
-  private Double valorProduto;
+  @Column(name = "VALOR")
+  private Double valor;
 }

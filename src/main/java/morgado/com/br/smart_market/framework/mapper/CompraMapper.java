@@ -14,7 +14,7 @@ public class CompraMapper {
         compraDB.getId(),
         compraDB.getIdProdutoSupermercado(),
         compraDB.getData(),
-        compraDB.getValorProduto());
+        compraDB.getValor());
   }
 
   public CompraDB toEntity(CompraRequest compra) {
