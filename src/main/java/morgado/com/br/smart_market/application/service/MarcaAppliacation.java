@@ -13,36 +13,36 @@ import morgado.com.br.smart_market.domain.models.Marca;
 @RequiredArgsConstructor
 public class MarcaAppliacation implements MarcaInput {
 
-  private MarcaOutput marcaOutput;
+  private final MarcaOutput marcaOutput;
 
   @Override
   public List<Marca> listarMarcas() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'listarMarcas'");
+    
+    return marcaOutput.listarMarcas();
   }
 
   @Override
   public Marca buscarMarca(Long idMarca) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'buscarMarca'");
+    
+    return marcaOutput.buscarMarca(idMarca);
   }
 
   @Override
   public Long criarMarca(Marca marca) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'criarMarca'");
+    
+    return marcaOutput.criarMarca(marca);
   }
 
   @Override
   public void atualizarMarca(Marca marca, Long idMarca) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'atualizarMarca'");
+
+    marcaOutput.atualizarMarca(marca, idMarca);
   }
 
   @Override
   public void deletarMarca(Long idMarca) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'deletarMarca'");
+    
+    marcaOutput.deletarMarca(idMarca);
   }
 
 }

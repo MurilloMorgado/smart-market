@@ -21,7 +21,7 @@ import morgado.com.br.smart_market.domain.models.Marca;
 @RequestMapping("/marcas")
 public class MarcaController {
 
-  private MarcaInput marcaInput;
+  private final MarcaInput marcaInput;
 
   @GetMapping
   public ResponseEntity<List<Marca>> listarMarcas() {

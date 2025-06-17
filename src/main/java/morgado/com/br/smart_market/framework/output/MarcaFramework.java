@@ -1,47 +1,62 @@
 package morgado.com.br.smart_market.framework.output;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import morgado.com.br.smart_market.application.output.MarcaOutput;
 import morgado.com.br.smart_market.domain.models.Marca;
+import morgado.com.br.smart_market.framework.models.MarcaDB;
 import morgado.com.br.smart_market.framework.output.jpa.MarcaRepository;
 
 @Service
 @RequiredArgsConstructor
 public class MarcaFramework implements MarcaOutput {
 
-  private MarcaRepository marcaRepository;
+  private final MarcaRepository marcaRepository;
 
   @Override
   public List<Marca> listarMarcas() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'listarMarcas'");
+
+    List<Marca> a = marcaRepository.findAll().stream().map(MarcaDB::toDomain).collect(Collectors.toList());
+    return a;
   }
 
   @Override
   public Marca buscarMarca(Long idMarca) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'buscarMarca'");
+
+    return marcaRepository.findById(idMarca).map(MarcaDB::toDomain)
+        .orElseThrow(() -> new InternalError("Marca não encontrada"));
   }
 
   @Override
   public Long criarMarca(Marca marca) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'criarMarca'");
+
+    MarcaDB marcaDB = new MarcaDB(marca);
+
+    return marcaRepository.save(marcaDB).getId();
+
   }
 
   @Override
   public void atualizarMarca(Marca marca, Long idMarca) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'atualizarMarca'");
+    
+    Marca marcaBuscada = buscarMarca(idMarca);
+    MarcaDB marcaBuscadaDB = new MarcaDB(marcaBuscada);
+
+    MarcaDB marcaDB = new MarcaDB(marca);
+
+    BeanUtils.copyProperties(marcaDB, marcaBuscadaDB, "id");
+    marcaRepository.save(marcaBuscadaDB);
+
   }
 
   @Override
   public void deletarMarca(Long idMarca) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'deletarMarca'");
+    
+    marcaRepository.deleteById(idMarca);
   }
 }

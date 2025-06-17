@@ -9,19 +9,32 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import morgado.com.br.smart_market.domain.models.Marca;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "MARCAR")
+@Table(name = "MARCA")
 public class MarcaDB {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ID_MARCAR")
+  @Column(name = "ID_MARCA")
   private Long id;
 
   @Column(name = "NOME")
   private String nome;
+
+  public MarcaDB(Marca marca) {
+    this.id = marca.getId();
+    this.nome = marca.getNome();
+  }
+
+  public Marca toDomain() {
+    return new Marca(
+      this.id,
+      this.nome);
+  }
+
 }
