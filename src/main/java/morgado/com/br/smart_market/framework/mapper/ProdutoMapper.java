@@ -13,7 +13,6 @@ public class ProdutoMapper {
     return new Produto(
         produtoDB.getId(),
         produtoDB.getNome(),
-        produtoDB.getMarca(),
         produtoDB.getCategoria());
   }
 
@@ -22,7 +21,6 @@ public class ProdutoMapper {
     return new ProdutoDB(
         produto.getId(),
         produto.getNome(),
-        produto.getMarca(),
         produto.getCategoria());
   }
 

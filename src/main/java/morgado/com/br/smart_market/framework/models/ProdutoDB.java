@@ -25,9 +25,6 @@ public class ProdutoDB {
   @Column(name = "NOME_PRODUTO")
   private String nome;
 
-  @Column(name = "MARCA_PRODUTO")
-  private String marca;
-
   @Column(name = "CATEGORIA_PRODUTO")
   private String categoria;
 }
