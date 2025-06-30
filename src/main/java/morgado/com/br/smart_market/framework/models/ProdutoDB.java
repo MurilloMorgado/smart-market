@@ -1,14 +1,10 @@
 package morgado.com.br.smart_market.framework.models;
 
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,8 +29,8 @@ public class ProdutoDB {
   @Column(name = "CATEGORIA_PRODUTO")
   private String categoria;
 
-  @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, orphanRemoval = true)
-  private List<ProdutoMarcaDB> produtoMarcas;
+  @Column(name = "MARCA_PRODUTO")
+  private String marcaProduto;
 
   public Produto toDomain() {
 
@@ -42,6 +38,6 @@ public class ProdutoDB {
         id,
         nome,
         categoria,
-        null);
+        marcaProduto);
   }
 }
