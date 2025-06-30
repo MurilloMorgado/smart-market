@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import morgado.com.br.smart_market.application.input.ProdutoInput;
 import morgado.com.br.smart_market.application.output.ProdutoOutput;
 import morgado.com.br.smart_market.domain.models.Produto;
+import morgado.com.br.smart_market.domain.models.Request.ProdutoRequest;
 
 @Service
 @RequiredArgsConstructor
@@ -29,9 +30,9 @@ public class ProdutoApplication implements ProdutoInput {
   }
 
   @Override
-  public Produto criarProduto(Produto produto) {
+  public Produto criarProduto(ProdutoRequest produtoRequest) {
 
-    return produtoOutput.criarProduto(produto);
+    return produtoOutput.criarProduto(produtoRequest);
   }
 
   @Override

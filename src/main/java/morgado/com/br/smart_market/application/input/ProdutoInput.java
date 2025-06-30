@@ -3,6 +3,7 @@ package morgado.com.br.smart_market.application.input;
 import java.util.List;
 
 import morgado.com.br.smart_market.domain.models.Produto;
+import morgado.com.br.smart_market.domain.models.Request.ProdutoRequest;
 
 public interface ProdutoInput {
 
@@ -10,7 +11,7 @@ public interface ProdutoInput {
 
   Produto buscarProduto(Long idProduto);
 
-  Produto criarProduto(Produto produto);
+  Produto criarProduto(ProdutoRequest produtoRequest);
 
   void atualizarProduto(Produto produto, Long idProduto);
 

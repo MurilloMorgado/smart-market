@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import morgado.com.br.smart_market.application.output.ProdutoOutput;
 import morgado.com.br.smart_market.domain.models.Produto;
+import morgado.com.br.smart_market.domain.models.Request.ProdutoRequest;
 import morgado.com.br.smart_market.framework.mapper.ProdutoMapper;
 import morgado.com.br.smart_market.framework.models.ProdutoDB;
 import morgado.com.br.smart_market.framework.output.jpa.ProdutoRepository;
@@ -35,8 +36,8 @@ public class ProdutoFramework implements ProdutoOutput {
   }
 
   @Override
-  public Produto criarProduto(Produto produto) {
-    ProdutoDB produtoDB = produtoMapper.toEntity(produto);
+  public Produto criarProduto(ProdutoRequest produtoRequest) {
+    ProdutoDB produtoDB = produtoMapper.produtoRequestToProdutoDB(produtoRequest);
 
     ProdutoDB salvo = produtoRepository.save(produtoDB);
     return produtoMapper.toDomain(salvo);

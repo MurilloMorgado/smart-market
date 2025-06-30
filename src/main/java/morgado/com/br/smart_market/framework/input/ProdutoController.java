@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import morgado.com.br.smart_market.application.input.ProdutoInput;
 import morgado.com.br.smart_market.domain.models.Produto;
+import morgado.com.br.smart_market.domain.models.Request.ProdutoRequest;
 
 @RestController
 @RequestMapping("/v1/produtos")
@@ -36,8 +37,8 @@ public class ProdutoController {
   }
 
   @PostMapping
-  public ResponseEntity<Long> criarProduto(@RequestBody Produto produto) {
-    Long idProduto = produtoInput.criarProduto(produto).getId();
+  public ResponseEntity<Long> criarProduto(@RequestBody ProdutoRequest produtoRequest) {
+    Long idProduto = produtoInput.criarProduto(produtoRequest).getId();
     return ResponseEntity.ok().body(idProduto);
   }
 
