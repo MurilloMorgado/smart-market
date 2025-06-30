@@ -10,6 +10,14 @@ import lombok.NoArgsConstructor;
 public class ProdutoMarca {
 
   private Long id;
-  private Marca marca;
-  private Produto produto;
+  private Long marca;
+  private Long produto;
+
+  public ProdutoMarca toDomain() {
+
+    return new ProdutoMarca(
+        this.id,
+        this.marca,
+        this.produto);
+  }
 }
