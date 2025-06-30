@@ -11,7 +11,6 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import morgado.com.br.smart_market.domain.models.Produto;
 import morgado.com.br.smart_market.domain.models.ProdutoMarca;
 
 @Data
@@ -33,6 +32,11 @@ public class ProdutoMarcaDB {
   @ManyToOne
   @JoinColumn(name = "ID_PRODUTO")
   private ProdutoDB produto;
+
+  public static ProdutoMarcaDB toEntity(ProdutoMarca produtoMarca) {
+
+    return null;
+  }
 
   public ProdutoMarca toDomain() {
 

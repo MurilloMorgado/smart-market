@@ -13,6 +13,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import morgado.com.br.smart_market.domain.models.Produto;
 
 @Data
 @AllArgsConstructor
@@ -32,6 +33,15 @@ public class ProdutoDB {
   @Column(name = "CATEGORIA_PRODUTO")
   private String categoria;
 
-  @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<ProdutoMarcaDB> produtoMarcas;
+
+  public Produto toDomain() {
+
+    return new Produto(
+        id,
+        nome,
+        categoria,
+        null);
+  }
 }

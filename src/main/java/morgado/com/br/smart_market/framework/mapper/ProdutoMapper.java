@@ -15,7 +15,6 @@ public class ProdutoMapper {
 
   public Produto toDomain(ProdutoDB produtoDB) {
 
-    // List<ProdutoMarcaDB> produtoMarcasDB = produtoDB.getProdutoMarcas();
     List<ProdutoMarca> produtoMarcas = produtoDB.getProdutoMarcas().stream().map(ProdutoMarcaDB::toDomain).collect(Collectors.toList());
 
     return new Produto(
