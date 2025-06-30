@@ -26,9 +26,9 @@ public class ProdutoMarcaDB {
 
   @ManyToOne
   @JoinColumn(name = "ID_MARCA")
-  private MarcaDB marcaDB;
+  private MarcaDB marca;
 
   @ManyToOne
   @JoinColumn(name = "ID_PRODUTO")
-  private ProdutoDB produtoDB;
+  private ProdutoDB produto;
 }

@@ -21,7 +21,8 @@ public class ProdutoMapper {
     return new ProdutoDB(
         produto.getId(),
         produto.getNome(),
-        produto.getCategoria());
+        produto.getCategoria(),
+        null);
   }
 
 }
